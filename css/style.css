@@ -1,0 +1,137 @@
+/*GENERELT*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.elefant__billede {
+    max-width: 100%;
+}
+.stor_elefant__billede {
+    max-width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "sidehoved"
+        "artikel"
+        "sidebar"
+        "galleri"
+        "sidefod";
+}
+
+/*ARTICLE*/
+.indhold {
+    grid-area: artikel;
+}
+
+/* HEADER & NAV */
+.sidehoved {
+    grid-area: sidehoved;
+    background: #ccc;
+}
+
+.sidehoved__overskrift {
+    padding: 20px;
+}
+
+.navigation {
+    width: 100%;
+    background: #333;
+}
+
+.nav__element {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav__link {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+}
+
+.nav__link:hover {
+    background: #cce;
+}
+
+/*ASIDE*/
+.klassifikation {
+    grid-area: sidebar;
+    padding: 20px;
+    background-color: beige;
+}
+
+.klassifikations__element {
+    list-style-position: inside;
+}
+
+/*GALLERY*/
+
+.galleri {
+    grid-area: galleri;
+}
+
+.galleri__overskrift {
+    padding: 20px;
+}
+
+/*FOOTER*/
+.sidefod {
+    grid-area: sidefod;
+    background: #ccc;
+    text-align: right;
+    padding: 20px;
+}
+
+/*MEDIA QUERIES*/
+
+/*Tablet and above*/
+@media only screen and (min-width: 650px) {
+    .container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 33%; 
+    grid-template-areas:
+        "sidehoved sidehoved"
+        "artikel sidebar"
+        "artikel galleri"
+        "sidefod sidefod";
+}
+    .klassifikation {
+        margin-top: 30px; 
+    }
+}
+
+
+/*Laptop and above*/
+@media only screen and (min-width: 1024px) {
+      .container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 33%; 
+    grid-template-areas:
+        "sidehoved sidehoved"
+        "artikel sidebar"
+        "artikel ..."
+        "galleri galleri"
+        "sidefod sidefod";
+}
+    .galleri__billeder {
+        display: flex;
+    }
+        
+}
+    .stor_elefant__billede {
+        max-width: 50%;
+      padding-left: 25%;
+    }
+    .klassifikation {
+        margin-top: 30px; 
+    }
+    
+}
